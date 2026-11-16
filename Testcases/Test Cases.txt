@@ -178,6 +178,3 @@ Total: 690.00
 
 ---
 
-## Screenshots
-
-_Add a console screenshot for each test case here before submitting._
