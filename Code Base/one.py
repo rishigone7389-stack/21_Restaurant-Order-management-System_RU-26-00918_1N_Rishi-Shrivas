@@ -4,9 +4,9 @@ Console application: select a table, take orders, view the running
 order and generate the final bill with service charge and GST.
 """
 
-# ---------------------------------------------------------------
+
 # BLOCK 1: Constants and data storage
-# ---------------------------------------------------------------
+
 MENU = {"Burger": 100, "Pizza": 200, "Coffee": 50}   # dictionary
 TOTAL_TABLES = 20
 SERVICE_RATE = 0.10    # 10%
@@ -17,9 +17,9 @@ GST_RATE = 0.05        # 5%
 orders = [[] for _ in range(TOTAL_TABLES + 1)]
 
 
-# ---------------------------------------------------------------
+
 # BLOCK 2: Menu display
-# ---------------------------------------------------------------
+
 def show_menu():
     print("\n----------- MENU -----------")
     for item, price in MENU.items():
@@ -27,9 +27,9 @@ def show_menu():
     print("----------------------------")
 
 
-# ---------------------------------------------------------------
+
 # BLOCK 3: Input validation functions
-# ---------------------------------------------------------------
+
 def get_table():
     """Keep asking until a valid table number (1-20) is entered."""
     while True:
@@ -57,9 +57,9 @@ def get_quantity():
         print("Invalid quantity. Enter a whole number.")
 
 
-# ---------------------------------------------------------------
+
 # BLOCK 4: Taking orders (loop for multiple items)
-# ---------------------------------------------------------------
+
 def add_items(table):
     print(f"\nTaking order for Table {table} (type 'done' to finish)")
     while True:
@@ -83,9 +83,9 @@ def add_items(table):
         view_order(table)
 
 
-# ---------------------------------------------------------------
+
 # BLOCK 5: Running order
-# ---------------------------------------------------------------
+
 def view_order(table):
     if not orders[table]:
         print(f"No items ordered yet for Table {table}.")
@@ -95,9 +95,9 @@ def view_order(table):
         print(f"{item} x{qty} = {MENU[item] * qty}")
 
 
-# ---------------------------------------------------------------
+
 # BLOCK 6: Billing
-# ---------------------------------------------------------------
+
 def generate_bill(table):
     if not orders[table]:
         print(f"Table {table} has no orders, nothing to bill.")
@@ -122,9 +122,9 @@ def generate_bill(table):
     orders[table] = []     # table is free for the next customer
 
 
-# ---------------------------------------------------------------
+
 # BLOCK 7: Main menu loop
-# ---------------------------------------------------------------
+
 def main():
     print("=== Restaurant Order Management System ===")
     show_menu()
@@ -145,8 +145,8 @@ def main():
             print("Invalid option. Choose 1, 2, 3 or 4.")
 
 
-# ---------------------------------------------------------------
+
 # BLOCK 8: Program entry point
-# ---------------------------------------------------------------
+
 if __name__ == "__main__":
     main()
